@@ -536,6 +536,7 @@
     </script>
 
 
+<!-- this is my original chat plugin -->
 <!--     <script>
           window.fbMessengerPlugins = window.fbMessengerPlugins || {
             init: function () {
@@ -570,7 +571,61 @@
     </div>
  -->
 
+<div id="fb-root"></div>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId            : '1678638095724206',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v2.10'
+    });
+  };
 
+  (function(d, s, id){
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) {return;}
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk/xfbml.customerchat.js";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="fb-customerchat"
+     page_id="1945359118814476"
+     ref="">
+</div>
+
+<style>
+#fb-root .fb_dialog_content:before,
+#fb-root .fb_dialog_content:after {
+  pointer-events: none;
+  content: '';
+  display: inline-block;
+  position: absolute;
+}
+
+#fb-root .fb_dialog_content:before {
+  background: #1D1D1B;
+  
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+#fb-root .fb_dialog_content:after {
+  background: url('https://scontent-lhr3-1.xx.fbcdn.net/v/t1.0-1/p200x200/24301208_1831206317171185_6769441460284672262_n.png?oh=bf8583177aab81c1a3f777a625e4dbe3&oe=5A9EBF51') no-repeat;
+  background-size: contain;
+
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+}
+
+
+/*this is just copied from https://matradee.uk/
 <div id="fb-root"></div>
 <script>
   window.fbAsyncInit = function() {
@@ -623,7 +678,7 @@
   right: 5px;
   bottom: 5px;
 }
-
+*/
 
 </body>
 
